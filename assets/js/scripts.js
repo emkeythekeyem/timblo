@@ -31,369 +31,403 @@ We may release future updates so it will overwrite this file. it's better and sa
 
 ----------------------------------------------*/
 
-    (function($) {
-        "use strict";
+(function ($) {
+  "use strict";
 
-
-            /* 01: Main menu
+  /* 01: Main menu
             ==============================================*/
 
-            $('.header-menu a[href="#"]').on('click', function(event) {
-                event.preventDefault();
-            });
+  $('.header-menu a[href="#"]').on("click", function (event) {
+    event.preventDefault();
+  });
 
-            $(".header-menu").menumaker({
-                title: '<i class="fa fa-bars"></i>',
-                format: "multitoggle"
-            });
+  $(".header-menu").menumaker({
+    title: '<i class="fa fa-bars"></i>',
+    format: "multitoggle",
+  });
 
-            var mainHeader = $('.main-header');
+  var mainHeader = $(".main-header");
 
-            if($(window).scrollTop() > 100) $('.main-header').addClass('sticky fadeInDown')
-            $(window).on('scroll', function(e){
-                if($(this).scrollTop() < 100){
-                    $('.main-header').removeClass('sticky fadeInDown')
-                }else
-                    $('.main-header').addClass('sticky fadeInDown')        
-                });
+  if ($(window).scrollTop() > 100)
+    $(".main-header").addClass("sticky fadeInDown");
+  $(window).on("scroll", function (e) {
+    if ($(this).scrollTop() < 100) {
+      $(".main-header").removeClass("sticky fadeInDown");
+    } else $(".main-header").addClass("sticky fadeInDown");
+  });
 
-            /* 02: Background image
+  /* 02: Background image
             ==============================================*/
 
-            var bgImg = $('[data-bg-img]');
+  var bgImg = $("[data-bg-img]");
 
-            bgImg.css('background', function(){
-                return 'url(' + $(this).data('bg-img') + ') center center';
-            });
+  bgImg.css("background", function () {
+    return "url(" + $(this).data("bg-img") + ") center center";
+  });
 
-
-
-
-            /* 03: Parsley form validation
+  /* 03: Parsley form validation
             ==============================================*/
 
-            $('.parsley-validate, .parsley-validate form').parsley();
+  $(".parsley-validate, .parsley-validate form").parsley();
 
-            /*============================================
+  /*============================================
                 04: Back to top button
             ==============================================*/
 
-        var $backToTopBtn = $('.back-to-top');
+  var $backToTopBtn = $(".back-to-top");
 
-        if ($backToTopBtn.length) {
-            var scrollTrigger = 400, // px
-            backToTop = function () {
-                var scrollTop = $(window).scrollTop();
-                if (scrollTop > scrollTrigger) {
-                    $backToTopBtn.addClass('show');
-                } else {
-                    $backToTopBtn.removeClass('show');
-                }
-            };
-
-            backToTop();
-
-            $(window).on('scroll', function () {
-                backToTop();
-            });
-
-            $backToTopBtn.on('click', function (e) {
-                e.preventDefault();
-                $('html,body').animate({
-                    scrollTop: 0
-                }, 700);
-            });
+  if ($backToTopBtn.length) {
+    var scrollTrigger = 400, // px
+      backToTop = function () {
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > scrollTrigger) {
+          $backToTopBtn.addClass("show");
+        } else {
+          $backToTopBtn.removeClass("show");
         }
+      };
 
-/*==========================================
+    backToTop();
+
+    $(window).on("scroll", function () {
+      backToTop();
+    });
+
+    $backToTopBtn.on("click", function (e) {
+      e.preventDefault();
+      $("html,body").animate(
+        {
+          scrollTop: 0,
+        },
+        700
+      );
+    });
+  }
+
+  /*==========================================
     14: feature-carousel
 ===========================================*/
 
-$('.feature-carousel').owlCarousel({
+  $(".feature-carousel").owlCarousel({
     loop: false,
     margin: 30,
     center: true,
-    dots:true,
+    dots: true,
     autoplay: false,
     autoplayTimeout: 4000,
     responsive: {
-        0: {
-            items: 1,
-            
-        },
-        575: {
-            items: 1,
-            
-        },
-        768: {
-            items: 2
-        },
-        991: {
-            items: 2
-        },  
-        992: {
-            items: 3
-        }
-    }
-})
+      0: {
+        items: 1,
+      },
+      575: {
+        items: 1,
+      },
+      768: {
+        items: 2,
+      },
+      991: {
+        items: 2,
+      },
+      992: {
+        items: 3,
+      },
+    },
+  });
 
-/* =================================================
+  /* =================================================
     app carousel
 ================================================= */
 
-    $('.app-carousel').owlCarousel({
-        loop: true,
-        margin: 30,
-        center: true,
-        dots: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            575: {
-                items: 1
-            },
-            700: {
-                items: 1
-            },
-            1000: {
-                items: 1
-            }
-        }
-    })
-    /*=============================================
+  $(".app-carousel").owlCarousel({
+    loop: true,
+    margin: 30,
+    center: true,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      575: {
+        items: 1,
+      },
+      700: {
+        items: 1,
+      },
+      1000: {
+        items: 1,
+      },
+    },
+  });
+  /*=============================================
         05: Changing svg color
     ==============================================*/
 
-    jQuery('img.svg').each(function(){
-        var $img = jQuery(this);
-        var imgID = $img.attr('id');
-        var imgClass = $img.attr('class');
-        var imgURL = $img.attr('src');
-    
-        jQuery.get(imgURL, function(data) {
-            // Get the SVG tag, ignore the rest
-            var $svg = jQuery(data).find('svg');
-    
-            // Add replaced image's ID to the new SVG
-            if(typeof imgID !== 'undefined') {
-                $svg = $svg.attr('id', imgID);
-            }
-            // Add replaced image's classes to the new SVG
-            if(typeof imgClass !== 'undefined') {
-                $svg = $svg.attr('class', imgClass+' replaced-svg');
-            }
-    
-            // Remove any invalid XML tags as per http://validator.w3.org
-            $svg = $svg.removeAttr('xmlns:a');
-            
-            // Check if the viewport is set, else we gonna set it if we can.
-            if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-                $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'));
-            }
-    
-            // Replace image with new SVG
-            $img.replaceWith($svg);
-    
-        }, 'xml');
-    });
+  jQuery("img.svg").each(function () {
+    var $img = jQuery(this);
+    var imgID = $img.attr("id");
+    var imgClass = $img.attr("class");
+    var imgURL = $img.attr("src");
 
-        /*=============================================
+    jQuery.get(
+      imgURL,
+      function (data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = jQuery(data).find("svg");
+
+        // Add replaced image's ID to the new SVG
+        if (typeof imgID !== "undefined") {
+          $svg = $svg.attr("id", imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if (typeof imgClass !== "undefined") {
+          $svg = $svg.attr("class", imgClass + " replaced-svg");
+        }
+
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr("xmlns:a");
+
+        // Check if the viewport is set, else we gonna set it if we can.
+        if (
+          !$svg.attr("viewBox") &&
+          $svg.attr("height") &&
+          $svg.attr("width")
+        ) {
+          $svg.attr(
+            "viewBox",
+            "0 0 " + $svg.attr("height") + " " + $svg.attr("width")
+          );
+        }
+
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+      },
+      "xml"
+    );
+  });
+
+  /*=============================================
             06: Ajax Contact Form
         ==============================================*/
 
-      
-         $('.contact-form').on('submit', 'form', function(e) {
-            e.preventDefault();
+  $(".contact-form").on("submit", "form", function (e) {
+    e.preventDefault();
 
-            var $el = $(this);
+    var $el = $(this);
 
-            $.post($el.attr('action'), $el.serialize(), function(res){
-                res = $.parseJSON( res );
-                $el.parent('.contact-page-form').find('.form-response').html('<span>' + res[1] + '</span>');
-            });
-        });
-      
-    
-    /*============================================
+    $.post($el.attr("action"), $el.serialize(), function (res) {
+      res = $.parseJSON(res);
+      $el
+        .parent(".contact-page-form")
+        .find(".form-response")
+        .html("<span>" + res[1] + "</span>");
+    });
+  });
+
+  /*============================================
         07: Preloader
     ==============================================*/
 
-    $(window).on('load', function(){
+  $(window).on("load", function () {
+    function removePreloader() {
+      var preLoader = $(".preLoader");
+      preLoader.fadeOut();
+    }
+    setTimeout(removePreloader, 250);
+  });
 
-        function removePreloader() {
-            var preLoader = $('.preLoader');
-            preLoader.fadeOut();
-        }
-        setTimeout(removePreloader, 250);
-    });
-
-
-    /* 08: Content animation
+  /* 08: Content animation
     ==============================================*/
 
-    $(window).on('load', function(){
+  $(window).on("load", function () {
+    var $animateEl = $("[data-animate]");
 
-        var $animateEl = $('[data-animate]');
+    $animateEl.each(function () {
+      var $el = $(this),
+        $name = $el.data("animate"),
+        $duration = $el.data("duration"),
+        $delay = $el.data("delay");
 
-        $animateEl.each(function () {
-            var $el = $(this),
-                $name = $el.data('animate'),
-                $duration = $el.data('duration'),
-                $delay = $el.data('delay');
+      $duration = typeof $duration === "undefined" ? "0.6" : $duration;
+      $delay = typeof $delay === "undefined" ? ".1" : $delay;
 
-            $duration = typeof $duration === 'undefined' ? '0.6' : $duration ;
-            $delay = typeof $delay === 'undefined' ? '.1' : $delay ;
-
-            $el.waypoint(function () {
-                $el.addClass('animated ' + $name)
-                   .css({
-                        'animation-duration': $duration + 's',
-                        'animation-delay': $delay + 's'
-                   });
-            }, {offset: '93%'});
-        });
+      $el.waypoint(
+        function () {
+          $el.addClass("animated " + $name).css({
+            "animation-duration": $duration + "s",
+            "animation-delay": $delay + "s",
+          });
+        },
+        { offset: "93%" }
+      );
     });
- 
-    /*=========================================================
+  });
+
+  /*=========================================================
         09: counter up
     =========================================================*/
-           $('.counter').counterUp({});
-        
-    /*====================================================
+  $(".counter").counterUp({});
+
+  /*====================================================
         10: Parallax
     ====================================================*/
-        var $parallaxLayers = $('[data-trigger="parallax_layers"]');
+  var $parallaxLayers = $('[data-trigger="parallax_layers"]');
 
-        if( $parallaxLayers.length ){
-            $parallaxLayers.each(function () {
-                new Parallax( $(this)[0], {
-                    selector: '[data-depth]'
-                });
-            });
-        }
-  
+  if ($parallaxLayers.length) {
+    $parallaxLayers.each(function () {
+      new Parallax($(this)[0], {
+        selector: "[data-depth]",
+      });
+    });
+  }
 
+  /* 16: video popup */
+  var t = $(".video-btn");
+  t.length &&
+    t.magnificPopup({
+      type: "iframe",
+    });
 
-    /* 16: video popup */
-        var t = $(".video-btn");
-        t.length && t.magnificPopup({
-            type: "iframe"
-        })
+  // parice tabele
+  $(".single-price-plan").on("mouseenter", function () {
+    $(this)
+      .addClass("active")
+      .parent()
+      .siblings()
+      .find(".single-price-plan")
+      .removeClass("active");
+  });
 
-        // parice tabele
-        $('.single-price-plan').on('mouseenter', function(){
-            $(this).addClass('active').parent().siblings().find('.single-price-plan').removeClass('active');
-        })
-        
- /*=====================================================
+  /*=====================================================
     13: partner carousel
 =====================================================*/
-        $('.partner-carousel').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: false,
-            dots: false,
-            autoplay:true,
-            autoplayTimeout:4000,
-            autoplaySpeed:3000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                500: {
-                    items: 3
-                },
-                768: {
-                    items: 4
-                },
-                992: {
-                    items: 5
-                }
-            }
-        })
+  $(".partner-carousel").owlCarousel({
+    loop: true,
+    margin: 20,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    autoplaySpeed: 3000,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      500: {
+        items: 3,
+      },
+      768: {
+        items: 4,
+      },
+      992: {
+        items: 5,
+      },
+    },
+  });
 
-        /* scroll */
+  /* scroll */
 
-        $(".header-menu ul li a").on("click", function(t) {
-            var c = $(this.hash);
-            if(c.length !==0 ){
-                $("html,body").animate({
-                    scrollTop: c.offset().top
-                }, 700);
-            }
-        })
+  $(".header-menu ul li a").on("click", function (t) {
+    var c = $(this.hash);
 
-        /* testimonial */
-/*=====================================================
+    $(".header-menu ul").slideUp("fast").removeClass("open");
+    if (c.length !== 0) {
+      $("html,body").animate(
+        {
+          scrollTop: c.offset().top,
+        },
+        700
+      );
+    }
+  });
+
+  /* testimonial */
+  /*=====================================================
    13: partner carousel
 =====================================================*/
 
-        let author_cumment = $('.author-comment-carousel');
-        author_cumment.owlCarousel({
-            loop: true,
-            margin: 20,
-            autoheight:true,
-            nav: true,
-            navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
-            dots: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                500: {
-                    items: 1
-                },
-                768: {
-                    items: 2
-                },
-                992: {
-                    items: 2
-                }
+  let author_cumment = $(".author-comment-carousel");
+  author_cumment.owlCarousel({
+    loop: true,
+    margin: 20,
+    autoheight: true,
+    nav: true,
+    navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
+    dots: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      500: {
+        items: 1,
+      },
+      768: {
+        items: 2,
+      },
+      992: {
+        items: 2,
+      },
+    },
+  });
+
+  $(".author-comment-carousel .owl-next").on("click", function () {
+    $(".author-carousel .owl-next").click();
+  });
+
+  $(".author-comment-carousel .owl-prev").on("click", function () {
+    $(".author-carousel .owl-prev").click();
+  });
+
+  // banner 2 logo bgs
+  $(window).on("resize", () => {
+    if ($(window).width() >= 975) {
+      $(".main-header.header-2 .logo .main-logo2").attr(
+        "src",
+        "assets/img/logo2.png"
+      );
+    } else if ($(window).width() <= 975) {
+      $(".main-header.header-2 .logo .main-logo2").attr(
+        "src",
+        "assets/img/logo.png"
+      );
+    }
+  });
+  if ($(window).width() >= 975) {
+    $(".main-header.header-2 .logo .main-logo2").attr(
+      "src",
+      "assets/img/logo2.png"
+    );
+  } else if ($(window).width() <= 975) {
+    $(".main-header.header-2 .logo .main-logo2").attr(
+      "src",
+      "assets/img/logo.png"
+    );
+  }
+
+  $(window).on("load", function () {
+    $(window)
+      .scroll(function () {
+        var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+        $(".fade-section").each(function () {
+          /* Check the location of each desired element */
+          var objectBottom =
+            $(this).offset().top +
+            $(this).outerHeight() -
+            $(this).outerHeight() * 0.5;
+
+          /* If the element is completely within bounds of the window, fade it in */
+          if (objectBottom < windowBottom) {
+            //object comes into view (scrolling down)
+            if ($(this).css("opacity") == 0) {
+              $(this).fadeTo(500, 1);
             }
+          } else {
+            //object goes out of view (scrolling up)
+            if ($(this).css("opacity") == 1) {
+              $(this).fadeTo(500, 0);
+            }
+          }
         });
-
-           $('.author-comment-carousel .owl-next').on('click', function () {
-               $('.author-carousel .owl-next').click()
-           });
-
-           $('.author-comment-carousel .owl-prev').on('click', function () {
-               $('.author-carousel .owl-prev').click()
-           });
-
-        // banner 2 logo bgs
-        $(window).on('resize', () =>{
-            if ($(window).width() >= 975 ){
-                $('.main-header.header-2 .logo .main-logo2').attr('src', 'assets/img/logo2.png')
-            } else if ($(window).width() <=975) {
-                $('.main-header.header-2 .logo .main-logo2').attr('src', 'assets/img/logo.png')
-            }
-        })
-        if ($(window).width() >=975) {
-            $('.main-header.header-2 .logo .main-logo2').attr('src', 'assets/img/logo2.png')
-        } else if ($(window).width() <=975){
-            $('.main-header.header-2 .logo .main-logo2').attr('src', 'assets/img/logo.png')
-        } 
-
-
-        $(window).on("load",function() {
-            $(window).scroll(function() {
-              var windowBottom = $(this).scrollTop() + $(this).innerHeight();
-              $(".fade-section").each(function() {
-                /* Check the location of each desired element */
-                var objectBottom = $(this).offset().top + $(this).outerHeight() - $(this).outerHeight()* .5 ;
-                
-                /* If the element is completely within bounds of the window, fade it in */
-                if (objectBottom < windowBottom) { //object comes into view (scrolling down)
-                  if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
-                } else { //object goes out of view (scrolling up)
-                  if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
-                }
-              });
-            }).scroll(); //invoke scroll-handler on page-load
-          });
-          
-
+      })
+      .scroll(); //invoke scroll-handler on page-load
+  });
 })(jQuery);
-
-

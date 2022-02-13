@@ -374,7 +374,7 @@
 
     .main-header.sticky .header-menu>ul>li:hover>a,
     .main-header.sticky .header-menu>ul>li.active>a {
-        color: #fff;
+        color: var(--hookers-green);;
     }
 
     .header-menu ul li a {
