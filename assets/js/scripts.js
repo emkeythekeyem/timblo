@@ -329,7 +329,10 @@ We may release future updates so it will overwrite this file. it's better and sa
   $(".header-menu ul li a").on("click", function (t) {
     var c = $(this.hash);
 
-    $(".header-menu ul").slideUp("fast").removeClass("open");
+    if ($(window).width() < 992) {
+      $(".header-menu ul").slideUp("fast").removeClass("open");
+    }
+
     if (c.length !== 0) {
       $("html,body").animate(
         {
