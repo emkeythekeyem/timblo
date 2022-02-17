@@ -111,7 +111,6 @@ We may release future updates so it will overwrite this file. it's better and sa
   $(".feature-carousel").owlCarousel({
     loop: false,
     margin: 30,
-    center: true,
     dots: true,
     autoplay: false,
     autoplayTimeout: 4000,
@@ -126,11 +125,11 @@ We may release future updates so it will overwrite this file. it's better and sa
         items: 2,
       },
       991: {
-        items: 2,
+        items: 4,
       },
       992: {
-        items: 3,
-      },
+        items: 4,
+      }
     },
   });
 
@@ -288,14 +287,14 @@ We may release future updates so it will overwrite this file. it's better and sa
     });
 
   // parice tabele
-  $(".single-price-plan").on("mouseenter", function () {
-    $(this)
-      .addClass("active")
-      .parent()
-      .siblings()
-      .find(".single-price-plan")
-      .removeClass("active");
-  });
+  // $(".single-price-plan").on("mouseenter", function () {
+  //   $(this)
+  //     .addClass("active")
+  //     .parent()
+  //     .siblings()
+  //     .find(".single-price-plan")
+  //     .removeClass("active");
+  // });
 
   /*=====================================================
     13: partner carousel
@@ -367,7 +366,7 @@ We may release future updates so it will overwrite this file. it's better and sa
         items: 2,
       },
       992: {
-        items: 2,
+        items: 3,
       },
     },
   });

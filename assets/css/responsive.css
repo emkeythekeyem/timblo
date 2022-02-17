@@ -14,11 +14,16 @@
 @media (min-width: 1401px) and (max-width: 3000px) {
     .banner-inner-area.banner-area1:before {
         right: 0px;
+        
     }
 }
 
 /* 1. Large devices (less than 1200px) */
 @media (max-width: 1199.98px) {
+    .bg-url-end-1
+    {
+        background-position: 20%;
+    }
     .header-menu>ul>li {
         padding-left: 13px;
         padding-right: 13px;
@@ -26,7 +31,8 @@
 
     .banner-inner-area.banner-area1:before {
         width: 100%;
-        height: 115%;
+        height: 100%;
+        background-position: 80%;
     }
 
     .user-interact-image {
@@ -115,227 +121,6 @@
 
     .main-header {
         padding: 10px 0;
-    }
-
-    .header-menu ul ul li a:hover:before,
-    .header-menu ul ul li.active a:before,
-    .header-menu ul ul li:hover>a:before {
-        opacity: 0;
-    }
-
-    .home-page1-light .header-menu ul li,
-    .home-page2-light .header-menu ul li {
-        border-top: 1px solid #f1f1f1;
-    }
-
-    .header-menu>ul>li {
-        padding-top: 0px;
-        padding-bottom: 0px;
-        margin-left: 0px !important;
-    }
-
-    .header-menu>ul>li:first-child {
-        border-top: 0px !important;
-    }
-
-    .header-menu ul li a {
-        color: #fff;
-        padding: 12px 15px !important;
-    }
-
-    .header-menu>ul ul li:not(:last-child) {
-        border-bottom: 0;
-    }
-
-    .header-menu ul ul li a {
-        padding-left: 30px !important;
-        width: auto;
-    }
-
-    .header-menu {
-        text-align: right;
-        position: initial;
-    }
-
-    .header-menu>ul {
-        position: absolute !important;
-        top: 44px !important;
-        left: 15px !important;
-        width: calc(100% - 30px) !important;
-        background: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        max-height: 350px;
-        overflow-y: auto;
-    }
-
-    .header-menu ul li a {
-        color: #081340;
-    }
-
-    .header-menu ul,
-    .header-menu ul ul,
-    .header-menu ul ul ul,
-    .header-menu>ul,
-    .header-menu.align-center>ul,
-    .header-menu>ul>li>ul,
-    .header-menu>ul>li:hover>ul,
-    .header-menu ul ul li:hover>ul {
-        position: relative;
-        left: 0;
-        right: auto;
-        top: 0;
-        width: 100%;
-        display: none;
-        padding: 0;
-        opacity: 1;
-        text-align: left;
-        z-index: 99999;
-    }
-
-    .header-menu ul li {
-        width: 100%;
-    }
-
-    .header-menu>ul>li>a,
-    .header-menu ul ul li a,
-    .header-menu ul ul li:first-child>a,
-    .header-menu ul ul li:last-child>a {
-        border-radius: 0;
-        box-shadow: none;
-    }
-
-    .header-menu ul li a i {
-        display: none;
-    }
-
-    .header-menu ul ul ul li a {
-        padding-left: 45px !important;
-    }
-
-    .header-menu #menu-button {
-        color: var(--primary);
-        font-size: 28px;
-        display: inline-block;
-        cursor: pointer;
-    }
-
-    .header-menu .submenu-button {
-        position: absolute;
-        right: 0;
-        display: block;
-        width: 50px;
-        height: 40px;
-        border-left: 1px solid rgba(120, 120, 120, 0.2);
-        z-index: 10;
-        cursor: pointer;
-    }
-
-    .header-menu ul ul .submenu-button {
-        height: 44px;
-    }
-
-    .header-menu .submenu-button:before {
-        content: '';
-        position: absolute;
-        right: 22.5px;
-        top: 18px;
-        display: block;
-        width: 0;
-        height: 0;
-        border: 4px solid transparent;
-        border-top-color: #fff;
-        z-index: 99;
-    }
-
-    .header-menu .submenu-opened:before {
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg);
-        top: 14px;
-    }
-
-    .header-menu ul ul .submenu-button:before {
-        top: 19.5px;
-    }
-
-    .header-menu ul ul .submenu-button.submenu-opened:before {
-        top: 15.5px;
-    }
-
-    .header-menu #menu-button.menu-opened:before,
-    .header-menu .submenu-button.submenu-opened:before {
-        border-top-color: var(--primary);
-    }
-
-    .header-menu>ul>li:not(.active):hover>a,
-    .header-menu>ul>li:not(.active)>a:hover {
-        color: var(--primary);
-    }
-
-    .header-menu>ul>li>ul {
-        background: #1c1967;
-    }
-
-    .header-menu>ul>li>ul,
-    .header-menu ul ul ul {
-        box-shadow: none;
-        border-bottom: 0;
-    }
-
-    .header-menu>ul>li>ul:before,
-    .header-menu ul ul ul:before {
-        display: none;
-    }
-
-    .header-menu ul ul ul li:first-child {
-        padding-top: 0;
-    }
-
-    .header-menu ul ul ul li:last-child {
-        padding-bottom: 0;
-    }
-
-    .header-menu ul ul li:hover>a,
-    .header-menu ul ul li>a:hover {
-        color: #fff;
-    }
-
-    .sticking .header-menu>ul>li:hover:not(.active)>a {
-        color: #1b435d;
-    }
-
-    .header-menu ul ul ul:after {
-        display: none;
-    }
-
-    .main-header6 .header-menu ul li a {
-        color: var(--primary);
-    }
-
-    .main-header6 .header-menu>ul>li:hover>a,
-    .main-header6 .header-menu>ul>li.active>a {
-        color: #00c6c6;
-    }
-
-
-    .header-menu>ul>li>a:after,
-    .header-menu>ul>li.active>a:after,
-    .header-menu>ul>li:hover>a:after {
-        display: none;
-    }
-
-    .signup--out-btn {
-        margin-left: 50px;
-    }
-
-    .header-menu>ul>li:hover>a:before,
-    .header-menu>ul>li.active>a:before {
-        display: none;
-    }
-
-    .header-menu ul ul li a {
-        font-size: 14px;
-        background: #ffffff;
-        color: #333333;
     }
 
 
