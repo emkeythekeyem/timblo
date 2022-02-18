@@ -717,10 +717,7 @@
         overflow: hidden;
     }
 
-    .center .single-author-imge img {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
+
 
     .header-menu>ul {
         top: 48px !important;

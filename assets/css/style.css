@@ -1935,9 +1935,9 @@ section.app-video:before {
   opacity: 1;
 }
 .single-author-imge img {
+  max-width: 120px!important;
   min-width: 120px!important;
-  min-width: 120px!important;
-  max-height: 120px!important;
+  min-height: 120px!important;
   max-height: 120px!important;
   border-radius: 50%;
   box-shadow: -9px 2px 20px rgb(0 0 0 / 20%);
@@ -1964,8 +1964,8 @@ section.app-video:before {
   overflow: visible;
 }
 .center .single-author-imge img {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .author-comment-carousel.owl-carousel .owl-stage {
