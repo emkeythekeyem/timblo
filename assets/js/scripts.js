@@ -426,8 +426,58 @@ We may release future updates so it will overwrite this file. it's better and sa
             }
           }
         });
+
+        var cards = document.querySelectorAll(".card");
+
+        if ($(window).width() <= 975) {
+          $(".card").each(function () {
+            /* Check the location of each desired element */
+            var objectBottom =
+              $(this).offset().top +
+              $(this).outerHeight() -
+              $(this).outerHeight() * 0.5;
+
+            /* If the element is completely within bounds of the window, fade it in */
+            if (objectBottom < windowBottom) {
+              //object comes into view (scrolling down)
+              if (!$(this).hasClass("is-flipped")) {
+                setTimeout(() => {
+                  $(this).addClass("is-flipped");
+                }, 300);
+              }
+            } else {
+            }
+          });
+        }
       })
       .scroll(); //invoke scroll-handler on page-load
+
+    /**
+     * Header scroll control
+     * When the user scrolls down the page hide the header, when they scroll up show it.
+     */
+    var lastScrollPosition;
+
+    $(document).scroll(function () {
+      var scrollPosition = $(this).scrollTop();
+      console.log($("header.header"));
+      // Scrolling down
+      if (scrollPosition > lastScrollPosition) {
+        // If the header is currently showing
+        if ($("header.header").length) {
+          $("header").fadeOut();
+        }
+      }
+      // Scrolling up
+      else {
+        // If the header is currently hidden
+        if ($("header.header").length) {
+          $("header").fadeIn();
+        }
+      }
+
+      lastScrollPosition = scrollPosition;
+    });
   });
 
   var cards = document.querySelectorAll(".card");

@@ -1353,6 +1353,7 @@ label input[type="radio"] {
   content: "";
 }
 
+
 .banner-area1 .banner-text-wrap span {
   color: #ffa21d;
   font-size: 30px;
@@ -1389,10 +1390,15 @@ label input[type="radio"] {
 }
 
 .banner-text-inner p {
-  color: var(--hookers-green);
+  color: var(--light-green);
   margin-bottom: 33px;
   font-size: 30px;
   line-height: 1.4;
+  text-shadow:
+  0 0.07em transparent,
+      0 0.07em transparent,
+      0.07em 0 rgba(0, 0, 0, 0.05),
+      0 0.07em transparent;
 }
 
 .banner-image {
@@ -2733,6 +2739,7 @@ section.app-video:before {
 
 .download-app-inner h2.h1 {
   font-size: 50px;
+  color: white;
   font-weight: 600;
   line-height: 60px;
   margin-bottom: 18px;
