@@ -3380,7 +3380,11 @@ ul.icon-ul li {
 }
 
 .card__face--front .post-image img {
+  max-height: 240px;
   min-height: 240px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card__face--back {
@@ -3417,5 +3421,10 @@ ul.icon-ul li {
 .card__face--back ul li {
   color: white;
   text-align: left;
+  font-weight: 400;
   background-image: url(../img/icons/mark.svg);
+}
+
+.card__face--back ul li span {
+  color: var(--light-green);
 }
