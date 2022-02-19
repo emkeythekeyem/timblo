@@ -3521,6 +3521,8 @@ ul.icon-ul li {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   font-size: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   
 }
 
