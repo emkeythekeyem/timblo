@@ -460,7 +460,7 @@ We may release future updates so it will overwrite this file. it's better and sa
 
     $(document).scroll(function () {
       var scrollPosition = $(this).scrollTop();
-      console.log($("header.header"));
+
       // Scrolling down
       if (scrollPosition > lastScrollPosition) {
         // If the header is currently showing
