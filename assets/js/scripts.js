@@ -129,7 +129,7 @@ We may release future updates so it will overwrite this file. it's better and sa
       },
       992: {
         items: 4,
-      }
+      },
     },
   });
 
@@ -328,10 +328,7 @@ We may release future updates so it will overwrite this file. it's better and sa
   $(".header-menu ul li a").on("click", function (t) {
     var c = $(this.hash);
 
-    if ($(window).width() < 992) {
-      $(".header-menu ul").slideUp("fast").removeClass("open");
-    }
-
+    $(".header-menu ul").slideUp("fast").removeClass("open");
     if (c.length !== 0) {
       $("html,body").animate(
         {
@@ -431,5 +428,13 @@ We may release future updates so it will overwrite this file. it's better and sa
         });
       })
       .scroll(); //invoke scroll-handler on page-load
+  });
+
+  var cards = document.querySelectorAll(".card");
+
+  [...cards].forEach((card) => {
+    card.addEventListener("click", function () {
+      card.classList.toggle("is-flipped");
+    });
   });
 })(jQuery);
