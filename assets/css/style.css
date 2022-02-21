@@ -3511,15 +3511,14 @@ ul.icon-ul li {
   text-align: center;
   font-weight: bold;
   font-size: 40px;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .card__face--front {
   border: 1px solid var(--hookers-green);
-  
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .card__face--front .post-image{
