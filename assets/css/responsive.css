@@ -574,6 +574,15 @@
     .banner-text-inner p{
         font-size:16px;
     }
+    .badge-section{
+        bottom: 30px;
+    }
+    .btn-badge img{
+        height: 40px;
+    }
+    .btn-badge img:first-child{
+        margin-right: 15px;
+    }
 
     .author-comment-carousel .owl-next,.author-comment-carousel .owl-prev
     {
