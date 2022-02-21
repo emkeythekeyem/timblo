@@ -139,8 +139,13 @@
         padding-bottom: 140px;
     }
 
+    .section-title {
+        margin-bottom: 16px!important;
+    }
+
     .section-title h2 {
-        font-size: 36px;
+        font-size: 36px!important;
+        margin: 16px 0;
     }
 
     .section-title {
@@ -567,7 +572,7 @@
 @media (max-width: 575.98px) {
 
     .banner-text-inner p{
-        
+
     }
 
     .author-comment-carousel .owl-next,.author-comment-carousel .owl-prev
@@ -668,7 +673,10 @@
         padding: 0px 0px;
     }
 
-
+    .banner-inner-area.banner-area1:before{
+        background-size: cover;
+        top: 25%;
+    }
    
 
     .post-tag-share {
@@ -714,10 +722,8 @@
  
 
     .banner-inner-area {
-        padding: 150px 0 96px;
+        padding: 180px 0 96px;
     }
-
-  
 
     .testimonial-author-arousel .owl-stage-outer {
         overflow: hidden;
@@ -734,6 +740,8 @@
         right: -213% !important;
         width: 350% !important;
     }*/
+
+    
     .single-author-comment h4 {
         font-size: 12px;
         line-height: 1.4;

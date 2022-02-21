@@ -1348,8 +1348,6 @@ position: relative;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.14);
-  background-blend-mode: multiply;
   height: 100%;
   width: 100%;
   top: 0%;
@@ -1409,7 +1407,7 @@ position: relative;
   font-size: 30px;
   line-height: 1.4;
   
-  text-shadow: 0 0.07em transparent, -0.04em 0 rgb(0 0 0 / 20%), 0 0.07em transparent, 0 0.07em transparent;
+  text-shadow: 0 0.07em transparent, -0.04em 0 rgb(0 0 0 / 8%), 0 0.07em transparent, 0 0.07em transparent;
 }
 
 .banner-image {
@@ -1603,7 +1601,7 @@ position: relative;
 }
 
 #comofunciona .section-title h2 {
-  font-size: 54px !important;
+  font-size: 54px;
   line-height: 1.4 !important;
   position: relative;
 }
@@ -1648,7 +1646,7 @@ position: relative;
   line-height: 30px;
 }
 .single-feature-inner h5 {
-  margin-bottom: 34px;
+  margin-bottom: 0;
   color: white;
   font-weight: 600;
 }
