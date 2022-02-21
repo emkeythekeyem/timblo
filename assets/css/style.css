@@ -2099,8 +2099,9 @@ section.app-video:before {
           justify-content: space-between;
 }
 .single-author-comment h4 {
-  font-size: 24px;
-  line-height: 1.2;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
   margin-bottom: 34px;
   color: white;
 }
