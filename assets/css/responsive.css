@@ -572,7 +572,7 @@
 @media (max-width: 575.98px) {
 
     .banner-text-inner p{
-
+        font-size:16px;
     }
 
     .author-comment-carousel .owl-next,.author-comment-carousel .owl-prev
@@ -672,7 +672,7 @@
     .app-scrin-inner {
         padding: 0px 0px;
     }
-    
+
     .banner-inner-area.banner-area1:before{
         background-size: cover;
         top: 25%;
