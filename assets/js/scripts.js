@@ -474,7 +474,7 @@ We may release future updates so it will overwrite this file. it's better and sa
       var scrollPosition = $(this).scrollTop();
 
       // Scrolling down
-      if (scrollPosition > lastScrollPosition) {
+      if ( scrollPosition + lastScrollPosition > 10 && scrollPosition > lastScrollPosition) {
         // If the header is currently showing
         if ($("header.header").length) {
           $("header").fadeOut();
