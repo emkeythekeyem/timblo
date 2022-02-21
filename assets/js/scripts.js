@@ -402,6 +402,8 @@ We may release future updates so it will overwrite this file. it's better and sa
     );
   }
 
+  let flipped = 0;
+
   $(window).on("load", function () {
     $(window)
       .scroll(function () {
@@ -452,12 +454,10 @@ We may release future updates so it will overwrite this file. it's better and sa
             /* If the element is completely within bounds of the window, fade it in */
             if (objectBottom < windowBottom) {
               //object comes into view (scrolling down)
-              if (!$(this).hasClass("is-flipped")) {
-                setTimeout(() => {
-                  $(this).addClass("is-flipped");
-                }, 300);
+              if (!$(this).hasClass("is-flipped") && flipped < 3) {
+                $(this).addClass("is-flipped");
+                flipped++;
               }
-            } else {
             }
           }
         });
@@ -494,9 +494,11 @@ We may release future updates so it will overwrite this file. it's better and sa
 
   var cards = document.querySelectorAll(".card");
 
-  [...cards].forEach((card) => {
-    card.addEventListener("click", function () {
-      card.classList.toggle("is-flipped");
+  if ($(window).width() <= 975) {
+    [...cards].forEach((card) => {
+      card.addEventListener("click", function () {
+        card.classList.toggle("is-flipped");
+      });
     });
-  });
+  }
 })(jQuery);
