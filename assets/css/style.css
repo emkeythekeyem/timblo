@@ -1343,6 +1343,11 @@ label input[type="radio"] {
 position: relative;
 }
 
+
+.banner-inner-area.banner-area1 {
+background-color: #fafafa;
+}
+
 .banner-inner-area.banner-area1:before {
   background: url(../img/bgs/sun.jpg);
   background-repeat: no-repeat;
@@ -1353,7 +1358,7 @@ position: relative;
   top: 0%;
   position: absolute;
   content: "";
-  z-index: -1;
+  z-index: 0;
 }
 
 .overlay{
