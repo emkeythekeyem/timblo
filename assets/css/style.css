@@ -1348,7 +1348,7 @@ position: relative;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: multiply;
   height: 100%;
   width: 100%;
@@ -1360,14 +1360,15 @@ position: relative;
 
 .overlay{
   position: absolute;
-  background-color: white;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  opacity: .01;
+  opacity: 1;
+  
   z-index: 0;
 }
+
 
 
 .banner-area1 .banner-text-wrap span {
@@ -1406,7 +1407,7 @@ position: relative;
 }
 
 .banner-text-inner p {
-  color: var(--light-green);
+  color: white;
   margin-bottom: 33px;
   font-size: 30px;
   line-height: 1.4;
@@ -1937,7 +1938,7 @@ section.app-video:before {
 .single-price-plan.active {
   border: 4px solid var(--primary);
   border-radius: 10px;
-  padding: 85px 0 80px;
+  padding: 40px 0 40px;
   margin-top: -30px;
   margin-bottom: 30px;
 }
@@ -3452,7 +3453,7 @@ ul.icon-ul li {
 
 #comunnidad{
   background: url("../img/bgs/newsletter.jpg");
-  background-position: top;
+  background-position: 50% 20%;
 }
 
 .footer-social-area img{

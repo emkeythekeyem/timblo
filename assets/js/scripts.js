@@ -429,8 +429,18 @@ We may release future updates so it will overwrite this file. it's better and sa
 
         var cards = document.querySelectorAll(".card");
 
-        if ($(window).width() <= 975) {
-          $(".card").each(function () {
+        $(".card").each(function () {
+          $(this).mouseenter(function () {
+            if (!$(this).hasClass("is-flipped")) {
+              $(this).addClass("is-flipped");
+            }
+          });
+          $(this).mouseleave(function () {
+            if ($(this).hasClass("is-flipped")) {
+              $(this).removeClass("is-flipped");
+            }
+          });
+          if ($(window).width() <= 975) {
             /* Check the location of each desired element */
             var objectBottom =
               $(this).offset().top +
@@ -447,8 +457,8 @@ We may release future updates so it will overwrite this file. it's better and sa
               }
             } else {
             }
-          });
-        }
+          }
+        });
       })
       .scroll(); //invoke scroll-handler on page-load
 
