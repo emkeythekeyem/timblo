@@ -100,6 +100,7 @@
     .banner-text-inner h1 {
         font-size: 40px;
     }
+    
 
     .banner-shape-inner .shape5 {
         top: 31%;
@@ -564,6 +565,10 @@
 
 /* 4. Small devices (less than  576px) */
 @media (max-width: 575.98px) {
+
+    .banner-text-inner p{
+        
+    }
 
     .author-comment-carousel .owl-next,.author-comment-carousel .owl-prev
     {

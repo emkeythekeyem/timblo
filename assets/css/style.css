@@ -1348,7 +1348,7 @@ position: relative;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.14);
   background-blend-mode: multiply;
   height: 100%;
   width: 100%;
@@ -1365,11 +1365,8 @@ position: relative;
   left: 0;
   top: 0;
   opacity: 1;
-  
   z-index: 0;
 }
-
-
 
 .banner-area1 .banner-text-wrap span {
   color: #ffa21d;
@@ -1407,11 +1404,12 @@ position: relative;
 }
 
 .banner-text-inner p {
-  color: white;
+  color: var(--hookers-green);
   margin-bottom: 33px;
   font-size: 30px;
   line-height: 1.4;
-  text-shadow: 0 0.07em transparent, -0.04em 0 rgb(0 0 0 / 8%), 0 0.07em transparent, 0 0.07em transparent;
+  
+  text-shadow: 0 0.07em transparent, -0.04em 0 rgb(0 0 0 / 20%), 0 0.07em transparent, 0 0.07em transparent;
 }
 
 .banner-image {
