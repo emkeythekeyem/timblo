@@ -3495,6 +3495,9 @@ ul.icon-ul li {
   -webkit-transform: translateX(-100%) rotateY(-180deg);
           transform: translateX(-100%) rotateY(-180deg);
 }
+.card.is-flipped .card__back {
+  transform: rotateY(0deg) translateZ(1px); 
+}
 
 .card .post-details{
   display: -webkit-box;
@@ -3538,8 +3541,8 @@ ul.icon-ul li {
 
 .card__face--back {
   background: var(--primary);
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg)  translateZ(1px);
+          transform: rotateY(180deg)  translateZ(1px);
   font-size: 16px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
