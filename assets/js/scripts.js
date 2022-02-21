@@ -430,16 +430,18 @@ We may release future updates so it will overwrite this file. it's better and sa
         var cards = document.querySelectorAll(".card");
 
         $(".card").each(function () {
-          $(this).mouseenter(function () {
-            if (!$(this).hasClass("is-flipped")) {
-              $(this).addClass("is-flipped");
-            }
-          });
-          $(this).mouseleave(function () {
-            if ($(this).hasClass("is-flipped")) {
-              $(this).removeClass("is-flipped");
-            }
-          });
+          if ($(window).width() > 975) {
+            $(this).mouseenter(function () {
+              if (!$(this).hasClass("is-flipped")) {
+                $(this).addClass("is-flipped");
+              }
+            });
+            $(this).mouseleave(function () {
+              if ($(this).hasClass("is-flipped")) {
+                $(this).removeClass("is-flipped");
+              }
+            });
+          }
           if ($(window).width() <= 975) {
             /* Check the location of each desired element */
             var objectBottom =
