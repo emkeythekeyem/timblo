@@ -1336,6 +1336,11 @@ label input[type="radio"] {
 .sticky.inner-header .header-menu > ul > li:active > a {
   color: var(--primary);
 }
+
+.banner-area-inner{
+  height: 100%;
+}
+
 .banner-inner-area {
   height: 100vh;
   padding: 192px 0 217px;
