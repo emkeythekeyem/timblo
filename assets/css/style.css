@@ -1363,7 +1363,7 @@ label input[type="radio"] {
 .banner-inner-area.banner-area1:before {
   background: url(../img/bgs/sun.jpg);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: 50% 85%;
   background-size: cover;
   height: 100%;
   width: 100%;
