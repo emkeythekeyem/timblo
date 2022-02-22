@@ -590,7 +590,7 @@
     }
 
     .banner-inner-area {
-        min-height: 100vh;
+        min-height: calc(100vh - 150px);
         padding: 150px 0 96px;
     }
 
