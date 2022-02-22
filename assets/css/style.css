@@ -24,7 +24,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden;
   width: 100vw;
   height: 100vh;
   height: var(--app-height);
@@ -1338,7 +1337,7 @@ label input[type="radio"] {
   color: var(--primary);
 }
 .banner-inner-area {
-  min-height: 100vh;
+  height: 100vh;
   padding: 192px 0 217px;
   position: relative;
   overflow: hidden;
