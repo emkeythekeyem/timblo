@@ -684,7 +684,7 @@
 
     .banner-inner-area.banner-area1:before{
         background-size: cover;
-        top: 25%;
+        top: 0;
     }
    
 
@@ -728,10 +728,8 @@
         margin-top: 0;
     }
 
- 
-
     .banner-inner-area {
-        padding: 180px 0 96px;
+        padding: 150px 0 150px;
     }
 
     .testimonial-author-arousel .owl-stage-outer {
