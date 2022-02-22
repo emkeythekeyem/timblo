@@ -501,4 +501,14 @@ We may release future updates so it will overwrite this file. it's better and sa
       });
     });
   }
+
+  const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+  }
+  window.addEventListener('resize', appHeight)
+  appHeight()
+
 })(jQuery);
+
+
