@@ -1351,14 +1351,15 @@ background-color: #fafafa;
 .banner-inner-area.banner-area1:before {
   background: url(../img/bgs/sun.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   height: 100%;
   width: 100%;
-  top: 0%;
+  top: 0;
   position: absolute;
   content: "";
   z-index: 0;
+
 }
 
 .overlay{

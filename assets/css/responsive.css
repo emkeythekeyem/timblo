@@ -730,6 +730,7 @@
 
     .banner-inner-area {
         padding: 150px 0 150px;
+        min-height: 100vh;
     }
 
     .testimonial-author-arousel .owl-stage-outer {
