@@ -36,6 +36,16 @@
     <script src="assets/js/jquery-3.3.1.min.js"></script>
 
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDD2SMY37D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GDD2SMY37D');
+    </script>
 </head>
 
 <body>
@@ -686,7 +696,7 @@
                     <div class="form-group"><input class="form-control" type="email" name="email"
                             placeholder="Escribe tu email" /></div>
 
-                    <div class="form-group"><button class="btn btn-primary" type="button">Suscríbete</button></div>
+                    <div class="form-group"><button class="btn btn-primary" type="submit">Suscríbete</button></div>
                 </form>
                 <div class="col-12 text-center">
                     <p class="text-white">
@@ -814,12 +824,23 @@
 
     <script src="assets/js/scripts.js"></script>
 
+    <script type="text/javascript">
+        var _iub = _iub || [];
+        _iub.csConfiguration = { "ccpaAcknowledgeOnDisplay": true, "ccpaApplies": true, "consentOnContinuedBrowsing": false, "cookiePolicyInOtherWindow": true, "enableCcpa": true, "floatingPreferencesButtonDisplay": "bottom-right", "invalidateConsentWithoutLog": true, "lang": "es", "perPurposeConsent": true, "whitelabel": false, "cookiePolicyId": 15424305, "siteId": 2538837, "banner": { "acceptButtonDisplay": true, "backgroundOverlay": true, "closeButtonRejects": true, "customizeButtonDisplay": true, "explicitWithdrawal": true, "position": "bottom", "rejectButtonDisplay": true } };
+    </script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+
     <script src="assets/js/custom.js"></script>
     <script type="text/javascript">
-        new ContactForm("#contact-form", {
-            endpoint: "./php/mail.php",
+
+
+        new ContactForm('#contact-form', {
+            endpoint: './php/mail.php'
         });
+
     </script>
+
 </body>
 
 </html>

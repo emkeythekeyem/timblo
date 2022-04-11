@@ -226,13 +226,13 @@ We may release future updates so it will overwrite this file. it's better and sa
         07: Preloader
     ==============================================*/
 
-  $(window).on("load", function () {
+  
     function removePreloader() {
       var preLoader = $(".preLoader");
       preLoader.fadeOut();
     }
-    setTimeout(removePreloader, 250);
-  });
+    setTimeout(removePreloader, 550);
+
 
   /* 08: Content animation
     ==============================================*/
